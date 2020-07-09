@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Post
+from django.shortcuts import render, redirect
+from .models import Post, Skill
 from django.views.generic import ListView, TemplateView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
@@ -9,7 +9,8 @@ from django.contrib import messages
 @login_required
 def home(request):
     context = {
-        'posts': Post.objects.filter(author=request.user)
+        'posts': Post.objects.filter(author=request.user),
+        'skills': Skill.objects.filter(author=request.user)
     }
     return render(request, 'blog/home.html', context)
 
@@ -25,6 +26,21 @@ class MyPostsView(LoginRequiredMixin, ListView):
     template_name = "blog/mine.html" # naming convention:<app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
+
+class MySkillsView(LoginRequiredMixin, ListView):
+    model = Skill
+    template_name = "blog/base.html" # naming convention:<app>/<model>_<viewtype>.html
+    context_object_name = 'skills'
+    ordering = ['-date_posted']
+
+class SkillsCreateView(LoginRequiredMixin, CreateView):
+    model = Skill
+    fields = ['title', 'content']
+    
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        messages.success(self.request, f'Your task has been created!')
+        return redirect('blog-home')
 
 class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post

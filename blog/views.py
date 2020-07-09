@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def home(request):
     context = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.filter(author=request.user)
     }
     return render(request, 'blog/home.html', context)
 

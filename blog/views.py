@@ -3,6 +3,7 @@ from .models import Post
 from django.views.generic import ListView, TemplateView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from django.contrib import messages
 # Create your views here.
 
 @login_required
@@ -19,6 +20,12 @@ class PostListView(LoginRequiredMixin, ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
+class MyPostsView(LoginRequiredMixin, ListView):
+    model = Post
+    template_name = "blog/mine.html" # naming convention:<app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
 class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
 
@@ -28,6 +35,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     
     def form_valid(self, form):
         form.instance.author = self.request.user
+        messages.success(self.request, f'Your post has been created!')
         return super().form_valid(form)
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -36,6 +44,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     
     def form_valid(self, form):
         form.instance.author = self.request.user
+        messages.success(self.request, f'Your post has been updated!')
         return super().form_valid(form)
 
     def test_func(self):

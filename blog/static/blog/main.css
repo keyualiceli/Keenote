@@ -37,7 +37,7 @@ body {
   .content-section {
     background-color:	#ffffff;
     padding: 10px 20px;
-    border: 2px solid #0c45a6;
+    border: 3px solid #0c45a6;
     border-radius: 3px;
     margin-bottom: 20px;
   }
@@ -45,20 +45,20 @@ body {
   .task-section {
     background-color:	#0c45a6;
     padding: 10px 20px;
-    border: 2px solid #16214b;
+    border: 3px solid #16214b;
     border-radius: 3px;
     margin-bottom: 20px;
   }
 
   .task-heading {
     color: #ffffff;
-    border-bottom: 2px solid #16214b;
+    border-bottom: 3px solid #16214b;
     padding-bottom: 10px;
   }
   .list-group-item {
     color: #16214b;
     background-color: #ffffff;
-    border: 2px solid #16214b;
+    border: 3px solid #16214b;
   }
   .task-description {
     color: #fdcf60;
@@ -76,6 +76,15 @@ body {
   .article-content {
     white-space: pre-line;
   }
+  .article-reflection {
+    white-space: pre-line;
+    color: #ffffff;
+    background-color: #0c45a6;
+    border: 3px solid #16214b;
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
   
   .article-img {
     height: 65px;
@@ -87,7 +96,7 @@ body {
     
     padding-bottom: 1px;
     margin-bottom: 4px;
-    border-bottom: 2px solid #0c45a6
+    border-bottom: 3px solid #0c45a6
   }
   .article-author {
     color: #0c45a6;
@@ -114,7 +123,7 @@ body {
   .account-heading, .form-section {
     font-size: 2.5rem;
     color: #16214b;
-    border-bottom: 2px, #fdcf60;
+    border-bottom: 3px, #fdcf60;
   }
 
 .form, .form-group{

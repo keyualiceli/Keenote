@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<h1 class="main-home">My Bucket List</h1>
+    {% for task in tasks %}
+        {% if task.author == user %}
+            <article class="media content-section">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <a class="mr-2 article-author" href="#">{{ task.author }}</a>
+                    </div>
+                    <h2><a class="article-title" href="#">{{ task.title }}</a></h2>
+                </div>
+            </article>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

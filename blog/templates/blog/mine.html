@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {% block content %}
+<h1 class="main-home">My Updates</h1>
     {% for post in posts %}
         {% if post.author == user %}
             <article class="media content-section">

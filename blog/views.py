@@ -26,9 +26,15 @@ class MyPostsView(LoginRequiredMixin, ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
+class MyTasksView(LoginRequiredMixin, ListView):
+    model = Skill
+    template_name = "blog/mytasks.html" # naming convention:<app>/<model>_<viewtype>.html
+    context_object_name = 'tasks'
+    ordering = ['title']
+
 class MySkillsView(LoginRequiredMixin, ListView):
     model = Skill
-    template_name = "blog/base.html" # naming convention:<app>/<model>_<viewtype>.html
+    template_name = "blog/menu_items.html" # naming convention:<app>/<model>_<viewtype>.html
     context_object_name = 'skills'
     ordering = ['title']
 

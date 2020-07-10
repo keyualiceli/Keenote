@@ -18,11 +18,11 @@ body {
   }
   
   .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+    color: #ffffff;
   }
   
   .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: #fdcf60;
   }
   
   .site-header .navbar-nav .nav-link.active {
@@ -32,17 +32,39 @@ body {
   .content-section {
     background-color:	#ffffff;
     padding: 10px 20px;
-    border: 1px solid #0c45a6;
+    border: 2px solid #0c45a6;
     border-radius: 3px;
     margin-bottom: 20px;
   }
   
+  .task-section {
+    background-color:	#0c45a6;
+    padding: 10px 20px;
+    border: 2px solid #16214b;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+
+  .task-heading {
+    color: #ffffff;
+    border-bottom: 2px solid #16214b;
+    padding-bottom: 10px;
+  }
+  .list-group-item {
+    color: #16214b;
+    background-color: #ffffff;
+    border: 2px solid #16214b;
+  }
+  .task-description {
+    color: #ffffff;
+  }
+
   .article-title {
     color: #0c45a6;
   }
   
   a.article-title:hover {
-    color: #0c45a6;
+    color: #16214b;
     text-decoration: none;
   }
   
@@ -57,13 +79,17 @@ body {
   }
   
   .article-metadata {
+    
     padding-bottom: 1px;
     margin-bottom: 4px;
-    border-bottom: 1px solid #0c45a6
+    border-bottom: 2px solid #0c45a6
+  }
+  .article-author {
+    color: #0c45a6;
   }
   
   .article-metadata a:hover {
-    color: #0c45a6;
+    color: #16214b;
     text-decoration: none;
   }
   
@@ -80,8 +106,13 @@ body {
     margin-bottom: 16px;
   }
   
-  .account-heading {
+  .account-heading, .form-section {
     font-size: 2.5rem;
-    color: #0c45a6;
+    color: #16214b;
+    border-bottom: 2px, #fdcf60;
   }
 
+.form, .form-group{
+  background-color: #ffffff;
+  color: #0c45a6;
+}

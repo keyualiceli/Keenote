@@ -60,18 +60,23 @@
                     {% block content %}{% endblock %}
                 </div>
                 <div class="col-md-4">
-                    <div class="content-section">
-                      <h3>Bucket list</h3>
-                      <p class='text-muted'>You can put any information here you'd like.
+                  {% if user.is_authenticated %}
+                    <div class="content-section task-section">
+                      <h3 class="task-heading">Bucket list</h3>
+                      <p class='task-description'>You can put any information here you'd like.
                         <ul class="list-group">
+                          <li class="list-group-item list-group-item-light task-item">Learn React front-end</li>
+                          <li class="list-group-item list-group-item-light task-item">Use OAuth</li>
+                          <li class="list-group-item list-group-item-light task-item">Look into Selenium</li>
                           {% for skill in skills %}
-                          <li class="list-group-item list-group-item-light">Latest Posts</li>
+                          
                           <li class="list-group-item list-group-item-light">{{ skill.title }}</li>
                           {% endfor %}
                         </ul>
                       </p>
                     </div>
-                  </div>
+                  {% endif %}
+                </div>
             </div>
         </main>
         

@@ -1,19 +1,20 @@
 body {
-    background: #fafafa;
-    color: #333333;
+    background: #fdcf60;
+    color: #16214b;
     margin-top: 5rem;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+    color: #16214b;
   }
   
   ul {
     margin: 0;
+    color: #0c45a6;
   }
   
-  .bg-steel {
-    background-color: #5f788a;
+  .bg-navy {
+    background-color: #16214b;
   }
   
   .site-header .navbar-nav .nav-link {
@@ -29,19 +30,19 @@ body {
   }
   
   .content-section {
-    background: #ffffff;
+    background-color:	#ffffff;
     padding: 10px 20px;
-    border: 1px solid #dddddd;
+    border: 1px solid #0c45a6;
     border-radius: 3px;
     margin-bottom: 20px;
   }
   
   .article-title {
-    color: #444444;
+    color: #0c45a6;
   }
   
   a.article-title:hover {
-    color: #428bca;
+    color: #0c45a6;
     text-decoration: none;
   }
   
@@ -58,11 +59,11 @@ body {
   .article-metadata {
     padding-bottom: 1px;
     margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
+    border-bottom: 1px solid #0c45a6
   }
   
   .article-metadata a:hover {
-    color: #333;
+    color: #0c45a6;
     text-decoration: none;
   }
   
@@ -81,4 +82,6 @@ body {
   
   .account-heading {
     font-size: 2.5rem;
+    color: #0c45a6;
   }
+

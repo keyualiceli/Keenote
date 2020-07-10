@@ -9,10 +9,9 @@ from django.contrib import messages
 @login_required
 def home(request):
     context = {
-        'posts': Post.objects.filter(author=request.user),
         'skills': Skill.objects.filter(author=request.user)
     }
-    return render(request, 'blog/home.html', context)
+    return render(request, 'blog/base.html', context)
 
 
 class PostListView(LoginRequiredMixin, ListView):
@@ -31,16 +30,16 @@ class MySkillsView(LoginRequiredMixin, ListView):
     model = Skill
     template_name = "blog/base.html" # naming convention:<app>/<model>_<viewtype>.html
     context_object_name = 'skills'
-    ordering = ['-date_posted']
+    ordering = ['title']
 
 class SkillsCreateView(LoginRequiredMixin, CreateView):
     model = Skill
-    fields = ['title', 'content']
+    fields = ['title']
     
     def form_valid(self, form):
         form.instance.author = self.request.user
         messages.success(self.request, f'Your task has been created!')
-        return redirect('blog-home')
+        return super().form_valid(form)
 
 class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
@@ -53,6 +52,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         messages.success(self.request, f'Your post has been created!')
         return super().form_valid(form)
+
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post

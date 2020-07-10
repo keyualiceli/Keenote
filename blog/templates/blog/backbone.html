@@ -66,8 +66,12 @@
                       <h3 class="task-heading">Bucket list</h3>
                       <p class='task-description'>You can put any information here you'd like.
                         <ul class="list-group">
-                          {% load menu_items %}
-                          {% menu_items %}
+                          <li class="list-group-item list-group-item-light task-item">Learn React front-end</li>
+                          <li class="list-group-item list-group-item-light task-item">Use OAuth</li>
+                          <li class="list-group-item list-group-item-light task-item">Look into Selenium</li>
+                          
+                          {% block title %} {% endblock %}
+
                         </ul>
                       </p>
                     </div>

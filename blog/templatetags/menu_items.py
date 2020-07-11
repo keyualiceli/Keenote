@@ -8,4 +8,8 @@ register = template.Library()
 
 @register.inclusion_tag('blog/menu_items.html')
 def menu_items():
-    return {'items': Skill.objects.all()} #need to check user
+    user = User.objects.first()
+    context = {
+        'items': Skill.objects.filter(author=user) #filter(author=request.user)
+    }
+    return context #need to check user

@@ -53,7 +53,12 @@ body {
   .task-heading {
     color: #ffffff;
     border-bottom: 3px solid #16214b;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+  }
+  a.task-heading:hover {
+    color: #fdcf60;
+    text-decoration: none;
+    padding-bottom: 15px;
   }
   .list-group-item {
     color: #16214b;
@@ -61,6 +66,7 @@ body {
     border: 3px solid #16214b;
   }
   .task-description {
+    padding: 5px;
     color: #fdcf60;
   }
 

@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, MyPostsView, MySkillsView, MyTasksView, SkillsCreateView
+from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, MyPostsView, MySkillsView, MyTasksView, SkillsCreateView, DeleteTaskView
 from django.views.generic import ListView
 
 urlpatterns = [
@@ -13,4 +13,5 @@ urlpatterns = [
     path('post/new/', PostCreateView.as_view(), name="post-create"),
     path('skill/new/', SkillsCreateView.as_view(), name="skills-create"),
     path('about/', views.about, name='blog-about'),
+    path('mytasks/<int:pk>/delete/', DeleteTaskView.as_view(), name='delete-task'),
 ]

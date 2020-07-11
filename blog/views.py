@@ -82,6 +82,15 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
         return self.request.user == post.author
 
 
+class DeleteTaskView(UserPassesTestMixin, DeleteView):
+    model = Skill
+    success_url = '/mytasks/'
+
+    def test_func(self):
+        task = self.get_object()
+        return self.request.user == task.author
+
+        
 
 @login_required
 def about(request):

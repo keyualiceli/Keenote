@@ -65,7 +65,7 @@
                 <div class="col-md-4">
                   {% if user.is_authenticated %}
                     <div class="content-section task-section">
-                      <h3 class="task-heading">Bucket list</h3>
+                      <h3 class="task-heading"><a href="{% url 'my-tasks' %}" style="color:#ffffff;">Bucket list</a></h3>
                       <p class='task-description'>What do I want to learn next?</p>
                       <ul class="list-group">
                         {% load menu_items %}

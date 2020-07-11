@@ -9,8 +9,14 @@
                         <a class="mr-2 article-author" href="#">{{ task.author }}</a>
                     </div>
                     <h2><a class="article-title" href="#">{{ task.title }}</a></h2>
+                    <form action="{% url 'delete-task' pk=task.pk %}" method="POST" class="form-group">
+                        {% csrf_token %}
+                        <input class="btn btn-outline-danger" type="submit" value="Delete"/>
+                    </form>
                 </div>
+
             </article>
+
         {% endif %}
     {% endfor %}
 {% endblock %}
